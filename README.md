@@ -1,0 +1,2 @@
+# ZacatkyPythonu
+sdílení pro studenty
