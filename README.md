@@ -2,12 +2,18 @@
 
 ## 📝 Zadání
 
-Vytvoř program v Pythonu, který:
-1. Vytvoří list ze zkopírovaného seznamu Chat GPT, Claude,...
-2. Přidá do listu další položku
-3. Odstraní z listu první prvek
-4. Vypíše délku listu
-5. Vypíše celý list
+S pomocí generativního AI chatbotu (Claude), GitHub Copilot, ChatGPT, Gemini ) vytvořte seznam s vnořeným seznamem, řetězcem nebo tuple, např. seznam tramvají z Prahy ve formátu: (typ, maximální_rychlost_km_h, rok_první_výroby) a databázi smysluplným způsobem zpracujte:
+
+filtrování seznamu, řazení podle různých atributů, výpočet popisných statistik, grafická reprezentace - histogram.
+
+**Inspirace pro tvorbu datasetu:**
+
+* největší města světa (název, počet obyvatel, kontinent)
+* státy (název, rozloha, počet obyvatel, hlavní město)
+* pražské tramvajové tratě (číslo linky, délka tratě, rok vzniku)
+* evropské řeky (název, délka, země, do které ústí)
+* filmové databáze (název filmu, rok vydání, hodnocení)
+* sporty (název, počet hráčů, olympijský/neolympijský)
 
 
 **Formát odevzdání:** Jupyter notebook (`.ipynb`) nebo Python soubor (`.py`)
