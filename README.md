@@ -1,4 +1,94 @@
-# Práce s listy v Pythonu 🐍
+# 18. 12. 🐍 Grafika v Pythonu: ColabTurtle & Vibecoding
+
+Tento manuál vám pomůže rozběhnout grafické kreslení v prostředí Google Colab. Protože v cloudu nemáme běžný monitor, musíme použít speciální knihovnu **ColabTurtle**.
+
+## 1. Příprava prostředí (Setup)
+Aby nám želva fungovala, musíme do **každého nového notebooku** na začátek vložit tyto dva kroky.
+
+**Krok A: Instalace** (spusťte tuto buňku jako první)
+```python
+!pip install ColabTurtle
+```
+
+**Krok B: Spuštění** (toto musí být na začátku vašeho kódu)
+```python
+from ColabTurtle.Turtle import *
+#initializeTurtle()  # window?size = (800,500)
+initializeTurtle(initial_speed=5,initial_window_size=(500,200)) # 13 je maximální rychlost
+```
+
+---
+
+## 2. Tahák příkazů (Cheat Sheet)
+Zde je seznam příkazů, které `ColabTurtle` umí. Pozor: Neumí všechno co klasická želva (např. neumí `circle`).
+
+| Příkaz | Příklad | Co to udělá |
+| :--- | :--- | :--- |
+| **Pohyb** | | |
+| `forward(číslo)` | `forward(100)` | Jde dopředu o X pixelů. |
+| `backward(číslo)` | `backward(50)` | Couvá o X pixelů. |
+| `left(úhel)` | `left(90)` | Otočí se doleva o X stupňů. |
+| `right(úhel)` | `right(45)` | Otočí se doprava o X stupňů. |
+| `getx()` | `gety()` | Vrátí souřadnice želvy.|
+| `setheading(úhel)` | `setheading(45)` | Otočí od východního směru. |
+| **Vzhled** | | |
+| `penup()` | `penup()` | Zvedne pero (nekreslí při pohybu). |
+| `pendown()` | `pendown()` | Položí pero (začne kreslit). |
+| `color('barva')` | `color('cyan')` | Změní barvu čáry (red, blue, white, cyan, magenta...). |
+| `width(číslo)` | `width(5)` | Změní tloušťku čáry. |
+| `bgcolor('barva')` | `bgcolor('black')` | Změní barvu pozadí celého plátna. |
+| **Ostatní** | | |
+| `goto(x, y)` | `goto(100, 200)` | Skočí na konkrétní souřadnice. |
+| `speed(číslo)` | `speed(10)` | Rychlost kreslení (1 = pomalu, 13 = max). |
+
+---
+
+## 3. První pokus: Základní čtverec
+Vyzkoušejte si, zda vše funguje. Tento kód nakreslí jednoduchý čtverec.
+
+```python
+from ColabTurtle.Turtle import *
+initializeTurtle()
+
+color('orange')
+width(3)
+
+# Opakuj 4x pro čtverec
+for _ in range(4):
+    forward(150)
+    left(90)
+
+## 4. Vibecoding: Pokročilé příklady
+Vibecoding je o stylu. Používáme černé pozadí, zajímavá barevná schémata a matematickou symetrii. Zkuste se inspirovat matematickými  vzory.
+
+### Vzor A: The Digital Pulse (Digitální puls)
+Tento příklad využívá trik se změnou tloušťky čáry (`width`) během kreslení. Vypadá to, jako by obrazec dýchal nebo pulzoval.
+
+**Vysvětlení kódu:**
+*   Používáme úhel `59` stupňů (ne 60). Díky tomu se trojúhelníky nikdy přesně nepotkají a vznikne chaos.
+*   `width(i % 10 + 1)` neustále mění tloušťku čáry od 1 do 10.
+
+```python
+from ColabTurtle.Turtle import *
+
+initializeTurtle(initial_speed=13)
+bgcolor('black') # Základ pro vibe
+colors = ['cyan', 'blue', 'white']
+
+for i in range(120):
+    color(colors[i % 3])    # Střídání 3 barev
+    width(i % 10 + 1)       # Mění tloušťku čáry (Puls efekt)
+    
+    forward(i * 3)          # Stále delší čáry
+    left(59)                # Nepravidelný úhel rotace
+
+
+---
+
+
+
+---
+# 4. 12. Práce s listy v Pythonu 🐍
 
 ## 📝 Zadání
 
